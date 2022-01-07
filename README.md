@@ -1,4 +1,4 @@
-![alt tag](https://i.ibb.co/YthtbLh/Giifff-mid.gif)
+![logo](https://i.ibb.co/YthtbLh/Giifff-mid.gif)
 ***
 # Comunicação Serial: Arduino com ESP-01
 Neste guia, você criará uma comunicação Serial entre o Arduino e o módulo WiFi ESP-01. Você aprenderá a filtrar e selecionar os dados corretos para a sua aplicação.
@@ -21,7 +21,7 @@ Para programar o ESP-01 você pode utilizar adaptadores USB, porém neste guia i
 Em sua Arduino IDE vá em: Arquivo > Preferências
 
 <p align="center">
-  <img src="https://i.ibb.co/pfNTZ7p/preparando-1.png" alt="Teste"/>
+  <img src="https://i.ibb.co/pfNTZ7p/preparando-1.png" alt="1"/>
 </p>
 
 Em "URLs Adicionais para Gerenciadores de Placas" escreva: http://arduino.esp8266.com/stable/package_esp8266com_index.json
@@ -29,19 +29,19 @@ Em "URLs Adicionais para Gerenciadores de Placas" escreva: http://arduino.esp826
 Dê "OK" para salvar
 
 <p align="center">
-  <img src="https://i.ibb.co/KLMDpYC/preparando-2.png" alt="Teste"/>
+  <img src="https://i.ibb.co/KLMDpYC/preparando-2.png" alt="2"/>
 </p>
 
 Em sua Arduino IDE vá em: Ferramentas > Placa > Gerenciador de Placas
 
 <p align="center">
-  <img src="https://i.ibb.co/yspM6M3/preparando-3.png" alt="Teste"/>
+  <img src="https://i.ibb.co/yspM6M3/preparando-3.png" alt="3"/>
 </p>
 
 Pesquise por "ESP8266", escolha a opção da imagem e clique em "Instalar" (como eu já tinha instalado, não apareceu a opção "Instalar")
 
 <p align="center">
-  <img src="https://i.ibb.co/1nfSQYM/preparando-4.png" alt="Teste"/>
+  <img src="https://i.ibb.co/1nfSQYM/preparando-4.png" alt="4"/>
 </p>
 
 Pronto! Com isso a IDE do Arduino já está pronta para utilizar o módulo ESP-01.
@@ -52,13 +52,13 @@ Para utilizar o display OLED é necessário instalar bibliotecas.
 Em sua Arduino IDE vá em: Sketch > Incluir Biblioteca > Gerenciar Bibliotecas
 
 <p align="center">
-  <img src="https://i.ibb.co/xC958xP/preparando-5.png" alt="Teste"/>
+  <img src="https://i.ibb.co/xC958xP/preparando-5.png" alt="5"/>
 </p>
 
 Pesquise por "SSD1306", escolha a opção da imagem e clique em "Instalar" (como eu já tinha instalado, não apareceu a opção "Instalar")
 
 <p align="center">
-  <img src="https://i.ibb.co/K6cwQsX/preparando-6.png" alt="Teste"/>
+  <img src="https://i.ibb.co/K6cwQsX/preparando-6.png" alt="6"/>
 </p>
 
 > Caso apareça alguma caixa pedindo a instalação de bibliotecas adicionais, clique em "Install All".
@@ -76,7 +76,7 @@ GPIO-0 | GND
 > Conectar o RESET do Arduino ao GND para realizar o upload do código do ESP-01.
 
 <p align="center">
-  <img src="https://i.ibb.co/yg5Dkks/proj1-fim.png" alt="Teste"/>
+  <img src="https://i.ibb.co/yg5Dkks/proj1-fim.png" alt="7"/>
 </p>
 
 ## Código do ESP-01
@@ -111,7 +111,7 @@ A10 | TX | -
 A11 | RX | -
 
 <p align="center">
-  <img src="https://i.ibb.co/yg5Dkks/proj1-fim.png" alt="Teste"/>
+  <img src="https://i.ibb.co/yg5Dkks/proj1-fim.png" alt="8"/>
 </p>
 
 ## Código do Arduino
