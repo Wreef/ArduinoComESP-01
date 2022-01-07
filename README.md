@@ -213,4 +213,80 @@ void loop() {
 }
 ```
 
-## Explicando o Código do
+## Entendendo o Código do Arduino
+Inicialmente importamos as bibliotecas necessárias para o funcionamento do código.
+
+```cpp
+#include <SoftwareSerial.h> // Comunicação Serial
+#include <SPI.h> // Display OLED
+#include <Wire.h> // Display OLED
+#include <Adafruit_GFX.h> // Display OLED
+#include <Adafruit_SSD1306.h> // Display OLED
+```
+
+Em seguida definimos alguns parâmetros para o Display OLED e criamos a comunicação Serial com o ESP-01 (cdSerial_ESP).
+
+```cpp
+#define SCREEN_WIDTH 128 // Comprimento do Display
+#define SCREEN_HEIGHT 32 // Altura do Display
+#define OLED_RESET     4  // Pino de Reset
+#define SCREEN_ADDRESS 0x3C // Endereço I2C
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET); // Display OLED
+
+
+SoftwareSerial cdSerial_ESP(10, 11); // Comunicação Serial com o ESP-01 (TX e RX)
+```
+
+Na função setup iniciamos a comunicação Serial com o ESP-01 e ligamos o Display.
+
+```cpp
+void setup() {
+
+  cdSerial_ESP.begin(9600); // Iniciando a comunicação Serial
+  delay(500);
+  
+  if(!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) { // Ligando o Display
+    for(;;);
+  }
+
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+  display.setCursor(0, 16);
+  display.print("Inicializando...");
+  display.display();
+  delay(500);
+}
+```
+
+Na função loop criamos a variável (vsData) que receberá as informações do ESP-01.
+
+Utilizamos as funções startsWith() e endsWith() para verificar como inicia e como termina a informação enviada pelo ESP-01. 
+
+No código "if (vsData.startsWith("O") && vsData.endsWith("K\r\n"))" usamos duas condições para permitir a impressão da informação no display. Verificamos se o dado recebido inicia com "O" e se termina com "K". Se as duas condições forem satisfeitas, o Arduino remove os dois caracteres e imprime somente o valor do contador.
+
+> Note que em "vsData.endsWith("K\r\n")" foi acrescentado "\r\n" além do caractere "K". O "\r" representa a ação de pressionar a tecla ENTER para pular um parágrafo. O "\n" representa o parágrafo criado. Esses caracteres surgem devido o uso da função "Serial.printl()" usada no código do ESP-01.
+
+A função "substring()" serve para selecionar uma parte de uma variável de texto. Neste caso selecionamos somente os valores do contador.
+
+```cpp
+void loop() {
+
+  String vsData;
+  
+  if (cdSerial_ESP.available() > 0)
+  {
+    vsData = cdSerial_ESP.readString();
+    if (vsData.startsWith("O") && vsData.endsWith("K\r\n"))
+    {
+      vsData = vsData.substring(1, (vsData.length() - 3));
+      display.clearDisplay();
+      display.setCursor(0,16);
+      display.print("Dado recebido: " + vsData);
+      display.display();
+    }
+  }
+
+  delay(1000);
+}
+```
