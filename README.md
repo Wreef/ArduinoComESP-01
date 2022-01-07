@@ -65,7 +65,19 @@ Pesquise por "SSD1306", escolha a opção da imagem e clique em "Instalar" (como
 
 ## Esquema de Montagem para Enviar o Código para o ESP-01
 
+Adaptador ESP-01 | Arduino
+:---: | :---:
+5V | 5V
+GND | GND
+TX | TX
+RX | RX
+GPIO-0 | GND
 
+> Conectar o RESET do Arduino ao GND para realizar o upload do código do ESP-01.
+
+<p align="center">
+  <img src="https://i.ibb.co/yg5Dkks/proj1-fim.png" alt="Teste"/>
+</p>
 
 ## Código do ESP-01
 
@@ -89,10 +101,14 @@ void loop() {
 
 ## Esquema de Montagem Final
 
-Arduino | 5V | GND | A4 | A5 | A10 | A11
-:---: | :---: | :---: | :---: | :---: | :---: | :---:
-Display OLED | VCC | GND | SDA | SDK | - | -
-Adaptador ESP-01 | VIN | GND | - | - | TX | RX
+Arduino | Adaptador ESP-01 | Display OLED
+:---: | :---: | :---:
+5V | 5V | 5V
+GND | GND | GND
+A4 | - | SDA
+A5 | - | SDK
+A10 | TX | -
+A11 | RX | -
 
 <p align="center">
   <img src="https://i.ibb.co/yg5Dkks/proj1-fim.png" alt="Teste"/>
