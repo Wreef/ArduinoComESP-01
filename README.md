@@ -9,7 +9,8 @@ Iremos programar um contador no ESP-01 e enviar as informações via Serial para
 
 ## Requerimentos
 - Placa Arduino Uno;
-- Módulo ESP-01;
+- Módulo ESP-01 (https://www.robocore.net/wifi/modulo-wifi-esp8266);
+- Adaptador para 5V do ESP-01 (https://www.robocore.net/placa-robocore/adaptador-para-esp8266);
 - Display OLED (usei um de 128x32);
 - Jumpers para conexão de componentes.
 
