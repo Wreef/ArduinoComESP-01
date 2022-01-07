@@ -9,7 +9,7 @@ void setup() {
 
 void loop() {
 
-  Serial.println("i" + String(viContador) + "f");
+  Serial.println("O" + String(viContador) + "K");
   viContador += 1;
   delay(5000);
 }
