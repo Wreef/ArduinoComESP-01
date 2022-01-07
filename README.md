@@ -303,6 +303,10 @@ void loop() {
 ```
 
 ## Conclusão
-Este tipo de projeto é bastante útil quando o se utiliza o ESP-01 para coletar dados em algum bando de dados e enviar para o Arduino tomar alguma decisão. Com o verificador de integridade do dado é possível evitar falhas de projeto.
+Esse tipo de projeto é bastante útil quando o se utiliza o ESP-01 para coletar dados em algum bando de dados e enviar para o Arduino tomar alguma decisão. Com o verificador de integridade do dado é possível evitar falhas de projeto.
 
-Esse guia apresenta somente uma informação básica de comunicação Serial entre Arduino e ESP-01.
+Este guia apresenta somente uma informação básica de comunicação Serial entre Arduino e ESP-01.
+
+<p align="center">
+  <img src="https://i.ibb.co/y5hGgch/arduinouno.png" alt="11"/>
+</p>
