@@ -93,7 +93,7 @@ void setup() {
 
 void loop() {
 
-  Serial.println("i" + String(viContador) + "f");
+  Serial.println("O" + String(viContador) + "K");
   viContador += 1;
   delay(5000);
 }
@@ -157,9 +157,9 @@ void loop() {
   if (cdSerial_ESP.available() > 0)
   {
     vsData = cdSerial_ESP.readString();
-    if (vsData.startsWith("i") && vsData.endsWith("f"))
+    if (vsData.startsWith("O") && vsData.endsWith("K\r\n"))
     {
-      vsData = vsData.substring(1, (vsData.length() - 1));
+      vsData = vsData.substring(1, (vsData.length() - 3));
       display.clearDisplay();
       display.setCursor(0,16);
       display.print("Dado recebido: " + vsData);
