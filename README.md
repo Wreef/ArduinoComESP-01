@@ -76,7 +76,7 @@ GPIO-0 | GND
 > Conectar o RESET do Arduino ao GND para realizar o upload do código do ESP-01.
 
 <p align="center">
-  <img src="https://i.ibb.co/yg5Dkks/proj1-fim.png" alt="7"/>
+  <img src="https://i.ibb.co/6DCrcsj/proj1-fim-esp.png" alt="7"/>
 </p>
 
 ## Código do ESP-01
