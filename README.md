@@ -62,7 +62,9 @@ Pesquise por "SSD1306", escolha a opção da imagem e clique em "Instalar" (como
 
 > Caso apareça alguma caixa pedindo a instalação de bibliotecas adicionais, clique em "Install All".
 
-## Esquema de Montagem
+## Esquema de Montagem para Enviar o Código para o ESP-01
+
+
 
 ## Código do ESP-01
 
@@ -83,6 +85,9 @@ void loop() {
   delay(5000);
 }
 ```
+
+## Esquema de Montagem Final
+
 
 ## Código do Arduino
 
