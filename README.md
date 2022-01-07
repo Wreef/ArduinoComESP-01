@@ -89,6 +89,14 @@ void loop() {
 
 ## Esquema de Montagem Final
 
+Arduino | 5V | GND | A4 | A5 | A10 | A11
+--- | --- | --- | --- | --- | --- | ---
+Display OLED | VCC | GND | SDA | SDK | - | -
+Adaptador ESP-01 | VIN | GND | - | - | TX | RX
+
+<p align="center">
+  <img src="https://i.ibb.co/yg5Dkks/proj1-fim.png" alt="Teste"/>
+</p>
 
 ## Código do Arduino
 
