@@ -26,7 +26,7 @@ Em sua Arduino IDE vá em: Arquivo > Preferências
 
 Em "URLs Adicionais para Gerenciadores de Placas" escreva: http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
-Dê "OK" para salvar
+Dê "OK" para salvar.
 
 <p align="center">
   <img src="https://i.ibb.co/KLMDpYC/preparando-2.png" alt="2"/>
@@ -38,7 +38,7 @@ Em sua Arduino IDE vá em: Ferramentas > Placa > Gerenciador de Placas
   <img src="https://i.ibb.co/yspM6M3/preparando-3.png" alt="3"/>
 </p>
 
-Pesquise por "ESP8266", escolha a opção da imagem e clique em "Instalar" (como eu já tinha instalado, não apareceu a opção "Instalar")
+Pesquise por "ESP8266", escolha a opção da imagem e clique em "Instalar" (como eu já tinha instalado, não apareceu a opção "Instalar").
 
 <p align="center">
   <img src="https://i.ibb.co/1nfSQYM/preparando-4.png" alt="4"/>
@@ -55,7 +55,7 @@ Em sua Arduino IDE vá em: Sketch > Incluir Biblioteca > Gerenciar Bibliotecas
   <img src="https://i.ibb.co/xC958xP/preparando-5.png" alt="5"/>
 </p>
 
-Pesquise por "SSD1306", escolha a opção da imagem e clique em "Instalar" (como eu já tinha instalado, não apareceu a opção "Instalar")
+Pesquise por "SSD1306", escolha a opção da imagem e clique em "Instalar" (como eu já tinha instalado, não apareceu a opção "Instalar").
 
 <p align="center">
   <img src="https://i.ibb.co/K6cwQsX/preparando-6.png" alt="6"/>
@@ -79,6 +79,17 @@ GPIO-0 | GND
   <img src="https://i.ibb.co/6DCrcsj/proj1-fim-esp.png" alt="7"/>
 </p>
 
+## Enviando o Código para o ESP-01
+Após realizar a montagem do esquema da imagem anterior, é necessário selecionar o módulo na IDE do Arduino.
+
+Em sua Arduino IDE vá em: Ferramentas > Placa > ESP8266 Boards > Generic ESP8266 Module
+
+<p align="center">
+  <img src="https://i.ibb.co/P6g926K/esp01module.png" alt="9"/>
+</p>
+
+Após selecionar o módulo ESP8266 é só enviar o código para o ESP-01.
+
 ## Código do ESP-01
 
 ```cpp
@@ -98,6 +109,37 @@ void loop() {
   delay(5000);
 }
 ```
+
+## Entendendo o Código do ESP-01
+Inicialmente é criado uma variável (viContador) para iniciar o contador.
+
+```cpp
+int viContador = 0;
+```
+
+Na função setup o Serial é iniciado. É pelo Serial que iremos mandar as informações para o Arduino.
+
+```cpp
+void setup() {
+  
+  Serial.begin(9600);
+  delay(500);
+}
+```
+
+Na função loop iremos imprimir a variável do contador (viContador) com uma letra "O" no início e uma letra "K" no final. Essas letras serão usadas pelo Arduino como forma de verificação de integridade da informação.
+
+Logo em seguida iremos somar "+1" ao contador e iremos dar um itervalo de 5 segundos entre os envios.
+
+```cpp
+void loop() {
+
+  Serial.println("O" + String(viContador) + "K");
+  viContador += 1;
+  delay(5000);
+}
+```
+
 
 ## Esquema de Montagem Final
 
@@ -170,3 +212,5 @@ void loop() {
   delay(1000);
 }
 ```
+
+## Explicando o Código do
