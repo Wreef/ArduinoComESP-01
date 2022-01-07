@@ -156,6 +156,17 @@ A11 | RX | -
   <img src="https://i.ibb.co/yg5Dkks/proj1-fim.png" alt="8"/>
 </p>
 
+## Enviando o Código para o Arduino
+Após realizar a montagem do esquema da imagem anterior, é necessário selecionar a placa Arduino Uno na IDE do Arduino.
+
+Em sua Arduino IDE vá em: Ferramentas > Placa > Arduino AVR Boards > Arduino Uno
+
+<p align="center">
+  <img src="https://i.ibb.co/y5hGgch/arduinouno.png" alt="10"/>
+</p>
+
+Após selecionar a placa Arduino Uno é só enviar o código.
+
 ## Código do Arduino
 
 ```cpp
@@ -165,13 +176,13 @@ A11 | RX | -
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-#define SCREEN_WIDTH 128 // Comprimento do Display
-#define SCREEN_HEIGHT 32 // Altura do Display
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 32
 #define OLED_RESET     4 
-#define SCREEN_ADDRESS 0x3C // Endereço I2C
+#define SCREEN_ADDRESS 0x3C
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-SoftwareSerial cdSerial_ESP(10, 11); // Comunicação Serial com o ESP-01 (TX e RX)
+SoftwareSerial cdSerial_ESP(10, 11);
 
 
 void setup() {
@@ -261,13 +272,13 @@ void setup() {
 
 Na função loop criamos a variável (vsData) que receberá as informações do ESP-01.
 
-Utilizamos as funções startsWith() e endsWith() para verificar como inicia e como termina a informação enviada pelo ESP-01. 
+Utilizamos as funções startsWith() e endsWith() para verificar como inicia e como termina a informação enviada pelo ESP-01 (https://docs.arduino.cc/built-in-examples/strings/StringStartsWithEndsWith). 
 
 No código "if (vsData.startsWith("O") && vsData.endsWith("K\r\n"))" usamos duas condições para permitir a impressão da informação no display. Verificamos se o dado recebido inicia com "O" e se termina com "K". Se as duas condições forem satisfeitas, o Arduino remove os dois caracteres e imprime somente o valor do contador.
 
 > Note que em "vsData.endsWith("K\r\n")" foi acrescentado "\r\n" além do caractere "K". O "\r" representa a ação de pressionar a tecla ENTER para pular um parágrafo. O "\n" representa o parágrafo criado. Esses caracteres surgem devido o uso da função "Serial.printl()" usada no código do ESP-01.
 
-A função "substring()" serve para selecionar uma parte de uma variável de texto. Neste caso selecionamos somente os valores do contador.
+A função "substring()" serve para selecionar uma parte de uma variável de texto. Neste caso selecionamos somente os valores do contador (https://www.arduino.cc/reference/pt/language/variables/data-types/string/functions/substring/).
 
 ```cpp
 void loop() {
@@ -290,3 +301,8 @@ void loop() {
   delay(1000);
 }
 ```
+
+## Conclusão
+Este tipo de projeto é bastante útil quando o se utiliza o ESP-01 para coletar dados em algum bando de dados e enviar para o Arduino tomar alguma decisão. Com o verificador de integridade do dado é possível evitar falhas de projeto.
+
+Esse guia apresenta somente uma informação básica de comunicação Serial entre Arduino e ESP-01.
