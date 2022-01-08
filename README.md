@@ -79,17 +79,6 @@ GPIO-0 | GND
   <img src="https://i.ibb.co/6DCrcsj/proj1-fim-esp.png" alt="7"/>
 </p>
 
-## Enviando o Código para o ESP-01
-Após realizar a montagem do esquema da imagem anterior, é necessário selecionar o módulo na IDE do Arduino.
-
-Em sua Arduino IDE vá em: Ferramentas > Placa > ESP8266 Boards > Generic ESP8266 Module
-
-<p align="center">
-  <img src="https://i.ibb.co/P6g926K/esp01module.png" alt="9"/>
-</p>
-
-Após selecionar o módulo ESP8266 é só enviar o código para o ESP-01.
-
 ## Código do ESP-01
 
 ```cpp
@@ -140,6 +129,16 @@ void loop() {
 }
 ```
 
+## Enviando o Código para o ESP-01
+Após realizar a montagem do esquema da imagem anterior, é necessário selecionar o módulo na IDE do Arduino.
+
+Em sua Arduino IDE vá em: Ferramentas > Placa > ESP8266 Boards > Generic ESP8266 Module
+
+<p align="center">
+  <img src="https://i.ibb.co/P6g926K/esp01module.png" alt="9"/>
+</p>
+
+Após selecionar o módulo ESP8266 é só enviar o código para o ESP-01.
 
 ## Esquema de Montagem Final
 
@@ -155,17 +154,6 @@ A11 | RX | -
 <p align="center">
   <img src="https://i.ibb.co/yg5Dkks/proj1-fim.png" alt="8"/>
 </p>
-
-## Enviando o Código para o Arduino
-Após realizar a montagem do esquema da imagem anterior, é necessário selecionar a placa Arduino Uno na IDE do Arduino.
-
-Em sua Arduino IDE vá em: Ferramentas > Placa > Arduino AVR Boards > Arduino Uno
-
-<p align="center">
-  <img src="https://i.ibb.co/y5hGgch/arduinouno.png" alt="10"/>
-</p>
-
-Após selecionar a placa Arduino Uno é só enviar o código.
 
 ## Código do Arduino
 
@@ -301,6 +289,17 @@ void loop() {
   delay(1000);
 }
 ```
+
+## Enviando o Código para o Arduino
+Após realizar a montagem do esquema da imagem anterior, é necessário selecionar a placa Arduino Uno na IDE do Arduino.
+
+Em sua Arduino IDE vá em: Ferramentas > Placa > Arduino AVR Boards > Arduino Uno
+
+<p align="center">
+  <img src="https://i.ibb.co/y5hGgch/arduinouno.png" alt="10"/>
+</p>
+
+Após selecionar a placa Arduino Uno é só enviar o código.
 
 ## Conclusão
 Esse tipo de projeto é bastante útil quando o se utiliza o ESP-01 para coletar dados em algum banco de dados e enviar para o Arduino, que por sua vez, irá tomar alguma decisão. Com o verificador de integridade do dado é possível evitar falhas no projeto.
