@@ -306,7 +306,7 @@ Esse tipo de projeto é bastante útil quando o se utiliza o ESP-01 para coletar
 
 Este guia apresenta somente uma informação básica de comunicação Serial entre Arduino e ESP-01.
 
-# Obrigado(a)!
+# Até mais!
 <p align="center">
   <img src="https://i.ibb.co/09f12gG/ezgif-com-gif-maker-1.gif" alt="12"/>
 </p>
